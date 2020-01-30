@@ -2,19 +2,37 @@ package models
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"log"
 	"os"
 	"strconv"
 
+	"github.com/AbishSowrirajan/finleap/config"
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func init() {
+// Db variable for Database operation
+var Db *sql.DB
 
-	con := os.Getenv("MYSQL_USER") + ":" + os.Getenv("MYSQL_PASSWORD") + "@tcp(mysql:" + strconv.Itoa(cnfg.Port) + ")/Finleap_Weather?charset=utf8"
+// Init for Database access
+func Init() {
+
+	var cnfg config.Cnfg
+
+	cf, err := config.Config()
+
+	if err != nil {
+
+		log.Fatalf("Error in accessing configration file %v", err.Error())
+	}
+
+	_ = json.Unmarshal(cf, &cnfg)
+
+	con := os.Getenv("SQL_UNAME") + ":" + os.Getenv("SQL_PASS") + "@tcp(mysql:" + strconv.Itoa(cnfg.Port) + ")/Finleap?charset=utf8"
 	fmt.Println(con)
-	_, err := sql.Open("mysql", con)
+
+	Db, err = sql.Open("mysql", con)
 
 	if err != nil {
 

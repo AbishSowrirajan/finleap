@@ -5,7 +5,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/finleap/models"
+	"github.com/AbishSowrirajan/finleap/models"
+	"github.com/AbishSowrirajan/finleap/routers"
 )
 
 func init() {
@@ -13,12 +14,12 @@ func init() {
 	file, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 
 	if err != nil {
-		log.Fatalln("Failed to open log file", output, ":", err)
+		log.Fatalln("Failed to open log file :", err)
 	}
 
 	multi := io.MultiWriter(file, os.Stdout)
 
-	logger := log.New(multi,
+	_ = log.New(multi,
 		"PREFIX: ",
 		log.Ldate|log.Ltime|log.Lshortfile)
 }
@@ -26,4 +27,5 @@ func init() {
 func main() {
 
 	models.Init()
+	routers.Run()
 }
