@@ -12,6 +12,9 @@
 ## steps to spin up the server 
 - sudo docker-compose up 
   
+## Testing is covered automatically when spin up the server using docker-compose up 
+ - you can check the test results on terminal when docker image is built 
+ 
 ## Please install Curl in linux machine or test from Postman 
 
 ## sample Curl for Creating City
