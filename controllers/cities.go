@@ -130,7 +130,7 @@ func (h *Handler) UpdateCity(w http.ResponseWriter, r *http.Request) {
 		if len(dbdata.Name) == 0 || len(dbdata.Longitude) == 0 || len(dbdata.Latitude) == 0 {
 
 			customerror.Err = "Input field cannot be Empty"
-			customerror.ErrCode = "200"
+			customerror.ErrCode = "201"
 			customerror.ErrTyp = "400"
 
 			output, _ = json.Marshal(customerror)
@@ -146,7 +146,7 @@ func (h *Handler) UpdateCity(w http.ResponseWriter, r *http.Request) {
 		if val == dbdata {
 
 			customerror.Err = "New data is same as old"
-			customerror.ErrCode = "200"
+			customerror.ErrCode = "202"
 			customerror.ErrTyp = "400"
 
 			output, _ = json.Marshal(customerror)

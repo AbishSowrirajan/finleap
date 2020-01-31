@@ -30,7 +30,7 @@ func (h *Handler) InsertTemperature(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 
 		customerror.Err = err.Error()
-		customerror.ErrCode = "201"
+		customerror.ErrCode = "210"
 		customerror.ErrTyp = "400"
 
 		output, _ = json.Marshal(customerror)
@@ -49,7 +49,7 @@ func (h *Handler) InsertTemperature(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 
 		customerror.Err = err.Error()
-		customerror.ErrCode = "202"
+		customerror.ErrCode = "211"
 		customerror.ErrTyp = "400"
 
 		output, _ = json.Marshal(customerror)
@@ -65,7 +65,7 @@ func (h *Handler) InsertTemperature(w http.ResponseWriter, r *http.Request) {
 
 	if minimum > maximum {
 		customerror.Err = "Minimum temperature cannot be greater than Maximum temperaure"
-		customerror.ErrCode = "203"
+		customerror.ErrCode = "212"
 		customerror.ErrTyp = "400"
 
 		output, _ = json.Marshal(customerror)

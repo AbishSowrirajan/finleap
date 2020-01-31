@@ -103,7 +103,7 @@ func (dbdata CityJSON) Create(data CityJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While inseting City Table %w ", err).Error()
-		customerror.ErrCode = "101"
+		customerror.ErrCode = "102"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -115,7 +115,7 @@ func (dbdata CityJSON) Create(data CityJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While inseting City Table %w ", err).Error()
-		customerror.ErrCode = "102"
+		customerror.ErrCode = "103"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -198,7 +198,7 @@ func (dbdata CityJSON) UpdateCity(data CityJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While Updating City Table %w ", err).Error()
-		customerror.ErrCode = "106"
+		customerror.ErrCode = "108"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -210,7 +210,7 @@ func (dbdata CityJSON) UpdateCity(data CityJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While updating city  Table %w ", err).Error()
-		customerror.ErrCode = "107"
+		customerror.ErrCode = "109"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -229,7 +229,7 @@ func (dbdata CityJSON) DeleteCity(data CityJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While Updating City Table %w ", err).Error()
-		customerror.ErrCode = "106"
+		customerror.ErrCode = "110"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -241,7 +241,7 @@ func (dbdata CityJSON) DeleteCity(data CityJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While updating city  Table %w ", err).Error()
-		customerror.ErrCode = "107"
+		customerror.ErrCode = "111"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -261,7 +261,7 @@ func (dbdata CityJSON) InsertCityTemp(data TempJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While inseting Temperature Table %w ", err).Error()
-		customerror.ErrCode = "108"
+		customerror.ErrCode = "112"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -273,7 +273,7 @@ func (dbdata CityJSON) InsertCityTemp(data TempJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While inseting Temperature Table %w ", err).Error()
-		customerror.ErrCode = "109"
+		customerror.ErrCode = "113"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -293,7 +293,7 @@ func (dbdata CityJSON) GetTempByTimSt(data TempJSON) interface{} {
 	if err != nil && err != sql.ErrNoRows {
 
 		customerror.Err = fmt.Errorf("Error While Query Temperature Table %w ", err).Error()
-		customerror.ErrCode = "104"
+		customerror.ErrCode = "114"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -322,7 +322,7 @@ func (dbdata CityJSON) GetAvgTempByCity(data ForcastJSON) interface{} {
 	if err != nil && err != sql.ErrNoRows {
 
 		customerror.Err = fmt.Errorf("Error While Query Temperature Table %w ", err).Error()
-		customerror.ErrCode = "104"
+		customerror.ErrCode = "115"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -344,7 +344,7 @@ func (dbdata CityJSON) InsertCityWebH(data WebHooksJSON) interface{} {
 	if err != nil && err != sql.ErrNoRows {
 
 		customerror.Err = fmt.Errorf("Error While Query WebHooks Table %w ", err).Error()
-		customerror.ErrCode = "104"
+		customerror.ErrCode = "116"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -353,7 +353,7 @@ func (dbdata CityJSON) InsertCityWebH(data WebHooksJSON) interface{} {
 	if UrlExist {
 
 		customerror.Err = "Url  already exist for this city "
-		customerror.ErrCode = "101"
+		customerror.ErrCode = "117"
 		customerror.ErrTyp = "400"
 
 		return customerror
@@ -365,7 +365,7 @@ func (dbdata CityJSON) InsertCityWebH(data WebHooksJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While inseting Webhooks Table %w ", err).Error()
-		customerror.ErrCode = "108"
+		customerror.ErrCode = "118"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -377,7 +377,7 @@ func (dbdata CityJSON) InsertCityWebH(data WebHooksJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While inseting Temperature Table %w ", err).Error()
-		customerror.ErrCode = "109"
+		customerror.ErrCode = "119"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -397,7 +397,7 @@ func (dbdata CityJSON) GetWebH(data WebHooksJSON) interface{} {
 	if err != nil && err != sql.ErrNoRows {
 
 		customerror.Err = fmt.Errorf("Error While Query WebHooks Table %w ", err).Error()
-		customerror.ErrCode = "110"
+		customerror.ErrCode = "120"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -406,7 +406,7 @@ func (dbdata CityJSON) GetWebH(data WebHooksJSON) interface{} {
 	if err == sql.ErrNoRows {
 
 		customerror.Err = "WebHooks Doesnt Exist"
-		customerror.ErrCode = "110"
+		customerror.ErrCode = "121"
 		customerror.ErrTyp = "400"
 
 		return customerror
@@ -426,7 +426,7 @@ func (dbdata CityJSON) DeleteWebH(data WebHooksJSON) interface{} {
 	if err != nil && err != sql.ErrNoRows {
 
 		customerror.Err = fmt.Errorf("Error While Query WebHooks Table %w ", err).Error()
-		customerror.ErrCode = "110"
+		customerror.ErrCode = "122"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -435,7 +435,7 @@ func (dbdata CityJSON) DeleteWebH(data WebHooksJSON) interface{} {
 	if err == sql.ErrNoRows {
 
 		customerror.Err = "WebHooks Doesnt Exist"
-		customerror.ErrCode = "110"
+		customerror.ErrCode = "123"
 		customerror.ErrTyp = "400"
 
 		return customerror
@@ -445,7 +445,7 @@ func (dbdata CityJSON) DeleteWebH(data WebHooksJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While Deleting Webhook  Table %w ", err).Error()
-		customerror.ErrCode = "106"
+		customerror.ErrCode = "124"
 		customerror.ErrTyp = "500"
 
 		return customerror
@@ -457,7 +457,7 @@ func (dbdata CityJSON) DeleteWebH(data WebHooksJSON) interface{} {
 	if err != nil {
 
 		customerror.Err = fmt.Errorf("Error While Deleting Web Hook  city  Table %w ", err).Error()
-		customerror.ErrCode = "107"
+		customerror.ErrCode = "125"
 		customerror.ErrTyp = "500"
 
 		return customerror
