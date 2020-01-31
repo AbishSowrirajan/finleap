@@ -1,0 +1,32 @@
+version: '3'
+services:
+  app:
+    container_name: docker-golang
+    restart: always
+    build: 
+      context: .
+    environment: 
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+
+    volumes:
+      - /etc/ssl/certs/ca-certificates.crt:/etc/ssl/certs/ca-certificates.crt
+    ports:
+      - '8080:8080'
+    links:
+      - mysql
+  mysql:
+    image: mysql:latest
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:rw
+      - ./mysql_data:/var/lib/mysql:rw
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Finleap
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    container_name: mysql
+    ports:
+      - "8081:3306"
+    tty: true
+      

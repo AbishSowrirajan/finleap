@@ -29,7 +29,7 @@ func Init() {
 
 	_ = json.Unmarshal(cf, &cnfg)
 
-	con := os.Getenv("SQL_UNAME") + ":" + os.Getenv("SQL_PASS") + "@tcp(mysql:" + strconv.Itoa(cnfg.Port) + ")/Finleap?charset=utf8"
+	con := os.Getenv("MYSQL_USER") + ":" + os.Getenv("MYSQL_PASSWORD") + "@tcp(mysql:" + strconv.Itoa(cnfg.Port) + ")/Finleap?charset=utf8"
 	fmt.Println(con)
 
 	Db, err = sql.Open("mysql", con)
