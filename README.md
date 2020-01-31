@@ -36,6 +36,10 @@
 - curl -XDELETE  http://localhost:8080/webhooks/7
 
 
+## to stop the server 
+- sudo docker-compose down 
+
+
 
 
 
