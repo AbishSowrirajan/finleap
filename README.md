@@ -13,8 +13,8 @@
 - sudo docker-compose up 
   
 ## Testing is covered automatically when spin up the server using docker-compose up 
- - you can check the test results on terminal when docker image is built 
- 
+ - you can check the test results on terminal when docker image is built (to manually check the testing give command (go test ./... -v --cover)
+  
 ## Please install Curl in linux machine or test from Postman 
 
 ## sample Curl for Creating City
