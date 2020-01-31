@@ -25,8 +25,6 @@ RUN go mod download
 
 RUN go test ./... -v --cover
 
-RUN rm -r /Finleap/mysql_data/*
-
 
 # Build the Go app
 RUN go build -o Finleap .
